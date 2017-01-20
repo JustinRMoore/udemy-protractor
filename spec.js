@@ -1,7 +1,7 @@
 var helper=require('./helper');
 
 
-
+// AAAARGH!!
 
 describe('Main page : login/registar', function(){
 
@@ -11,12 +11,12 @@ describe('Main page : login/registar', function(){
 		var pageTitle='Etsy.com | Shop for anything from creative people everywhere';
 		expect(browser.getTitle()).toEqual(pageTitle);
 
-	});
+	  });
 
 	it('should sign in', function(){
 		browser.get(browser.params.url);
 
-/*
+
 		var signInOpenButton = element(by.id('sign-in'));
 		var signInSubmitButton = element(by.id('signin-button'));
 		var usernameField = element(by.id('username-existing'));
@@ -33,9 +33,9 @@ describe('Main page : login/registar', function(){
 
 		helper.waitUntilReady(passwordExistingError);
 		expect(passwordExistingError.getText()).toBe('Password was incorrect.');
-*/
 
-	});
+
+	  });
 
 	it('should register a new user', function(){
 		browser.get(browser.params.url);
