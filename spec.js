@@ -1,21 +1,40 @@
 var helper=require('./helper');
 
 
-// AAAARGH!!
+
+
+
+
+
+
+
+
+
 
 describe('Main page : login/registar', function(){
 
 
+
+	beforeEach(function(){
+			browser.get(browser.params.url);
+		});
+
+
+	afterEach(function(){
+			browser.manage().deleteAllCookies();
+		});
+
+
+
+
 	it('should have a title', function(){
-		browser.get(browser.params.url);
+
 		var pageTitle='Etsy.com | Shop for anything from creative people everywhere';
 		expect(browser.getTitle()).toEqual(pageTitle);
 
 	  });
 
 	it('should sign in', function(){
-		browser.get(browser.params.url);
-
 
 		var signInOpenButton = element(by.id('sign-in'));
 		var signInSubmitButton = element(by.id('signin-button'));
@@ -38,9 +57,7 @@ describe('Main page : login/registar', function(){
 	  });
 
 	it('should register a new user', function(){
-		browser.get(browser.params.url);
 
-//		var  = element(by.xpath(""));
 		var registerOpenButton = element(by.xpath(".//*[@id='register']"));
 		var fnField= element(by.xpath(".//*[@id='first-name']"));
 		var lnField= element(by.xpath(".//*[@id='last-name']"));
@@ -56,7 +73,6 @@ describe('Main page : login/registar', function(){
 
 		helper.waitUntilReady(fnField);
 		fnField.sendKeys('Bill');
-		//helper.waitUntilReady(fnField);
 		lnField.sendKeys('Bixby');
 		genderField.click();
 		emailField.sendKeys('test@test.com');
