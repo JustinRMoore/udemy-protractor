@@ -1,15 +1,5 @@
 var helper=require('./helper');
-
-
-
-
-
-
-
-
-
-
-
+var faker =require('faker');
 
 describe('Main page : login/registar', function(){
 
@@ -23,6 +13,11 @@ describe('Main page : login/registar', function(){
 	afterEach(function(){
 			browser.manage().deleteAllCookies();
 		});
+
+var fn= faker.name.firstName();
+var ln= faker.name.lastName();
+var em = faker.internet.email();
+var pas = faker.internet.password();
 
 
 
@@ -72,13 +67,13 @@ describe('Main page : login/registar', function(){
 		registerOpenButton.click();
 
 		helper.waitUntilReady(fnField);
-		fnField.sendKeys('Bill');
-		lnField.sendKeys('Bixby');
+		fnField.sendKeys(fn);
+		lnField.sendKeys(ln);
 		genderField.click();
-		emailField.sendKeys('test@test.com');
+		emailField.sendKeys(em);
 
-		passwordField.sendKeys('pa55word');
-		passwordConfirmField.sendKeys('pa55word');
+		passwordField.sendKeys(pas);
+		passwordConfirmField.sendKeys(pas);
 
 		userNameField.sendKeys('notHulk');
 

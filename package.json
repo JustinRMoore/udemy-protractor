@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/protractor/bin/protractor config.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustinRMoore/udemy-protractor/issues"
+  },
   "dependencies": {
     "protractor": "^5.0.0"
+  },
+  "devDependencies": {
+    "faker": "^3.1.0"
   }
 }
