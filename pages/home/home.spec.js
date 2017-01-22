@@ -26,7 +26,7 @@ describe('Main page : login/registar', function(){
 		expect(browser.getTitle()).toEqual(homePg.pageTitle);
 	});
 
-	it('should attempt to signin and verify incorrect password message', function(){
+	it('should attempt to sign in and verify incorrect password message', function(){
 		homePg.signInOpenButton.click();
 		helper.waitUntilReady(homePg.usernameField);
 		homePg.usernameField.sendKeys('test@test.com');
@@ -38,7 +38,7 @@ describe('Main page : login/registar', function(){
   });
 
 	it('should register a new user', function(){
-		homePg.registerOpenButton.click();
+		homePg.goToRegister();
 		helper.waitUntilReady(homePg.fnField);
 		homePg.fnField.sendKeys(fn);
 		homePg.lnField.sendKeys(ln);

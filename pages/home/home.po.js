@@ -1,3 +1,8 @@
+var helper = require('./../../helper');
+
+
+
+
 var HomePage = function() {
 
 		this.pageTitle='Etsy.com | Shop for anything from creative people everywhere';
@@ -21,6 +26,12 @@ var HomePage = function() {
 		this.userNameField = element(by.xpath(".//*[@id='username']"));
 		this.newsletterField= element(by.xpath(".//*[@id='etsy_finds']"));
 		this.registerSubmitButton= element(by.xpath(".//*[@id='register_button']"));
+
+		this.goToRegister = function(){
+			helper.waitElementToBeClickable(this.registerOpenButton);
+			this.registerOpenButton.click();
+		}
+
 }
 
 
